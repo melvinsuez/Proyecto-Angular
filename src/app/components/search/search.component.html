@@ -1,0 +1,29 @@
+<div class="container p-4">
+
+    <div class="row"> 
+        <div class="col d-flex justify-content-center" style="width: 100%;">
+        <input  #termino (keyup.enter)="buscar(termino.value)" type="text"  class="form control" placeholder="Pesquisar Git">
+    
+        <div id="loader" *ngIf="loading">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+        </div>
+
+        </div>
+
+</div>
+    <div class="row row-cols-sm-2 row-cols-md-4 row-cols-lg-5 g-4 p-4" *ngIf="loadimg">
+        <div *ngFor="let git of listaGit">
+            <div class="card">
+                <img [src]="git.images.original.url" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-title">{{git.title}}</p>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
